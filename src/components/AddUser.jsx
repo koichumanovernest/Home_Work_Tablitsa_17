@@ -44,40 +44,47 @@ const AddUser = ({ onAdd }) => {
 
 	return (
 		<Form onSubmit={handleSubmit}>
+			<StyledLabel>	First Name</StyledLabel>
 			<Input
 				type="text"
 				name="firstName"
-				placeholder="Имя"
+				placeholder="Name"
 				value={formData.firstName}
 				onChange={handleChange}
 				error={!!errors.firstName}
 			/>
 			{errors.firstName && <ErrorMessage>{errors.firstName}</ErrorMessage>}
+			<StyledLabel>	Last Name</StyledLabel>
+
 			<Input
 				type="text"
 				name="lastName"
-				placeholder="Фамилия"
+				placeholder="UserName"
 				value={formData.lastName}
 				onChange={handleChange}
 				error={!!errors.lastName}
 			/>
 			{errors.lastName && <ErrorMessage>{errors.lastName}</ErrorMessage>}
+			<StyledLabel>	Gender Name</StyledLabel>
+
 			<Select
 				name="gender"
 				value={formData.gender}
 				onChange={handleChange}
 				error={!!errors.gender}>
-				<option value="">Выберите пол</option>
-				<option value="Мужской">Мужской</option>
-				<option value="Женский">Женский</option>
+				<option value="">Gender</option>
+				<option value="Мужской">Male</option>
+				<option value="Женский">Girl</option>
 			</Select>
 			{errors.gender && <ErrorMessage>{errors.gender}</ErrorMessage>}
+			<StyledLabel>	Город Рождения</StyledLabel>
+
 			<Select
 				name="cityOfBirth"
 				value={formData.cityOfBirth}
 				onChange={handleChange}
 				error={!!errors.cityOfBirth}>
-				<option value="">Выберите город</option>
+				<option value="">Город Рождения</option>
 				<option value="Бишкек">Бишкек</option>
 				<option value="Иссык-куль">Иссык-Куль</option>
 				<option value="Нарын">Нарын</option>
@@ -87,6 +94,8 @@ const AddUser = ({ onAdd }) => {
 				<option value="Джалал-Абад">Джалал-Абад</option>
 			</Select>
 			{errors.cityOfBirth && <ErrorMessage>{errors.cityOfBirth}</ErrorMessage>}
+			<StyledLabel>Год Рождения</StyledLabel>
+
 			<Input
 				type="date"
 				name="yearOfBirth"
@@ -96,7 +105,7 @@ const AddUser = ({ onAdd }) => {
 				error={!!errors.yearOfBirth}
 			/>
 			{errors.yearOfBirth && <ErrorMessage>{errors.yearOfBirth}</ErrorMessage>}
-			<Button type="submit">Добавить</Button>
+			<Button type="submit">Добавить студента</Button>
 		</Form>
 	);
 };
@@ -110,8 +119,8 @@ const Form = styled.form`
 `;
 
 const Input = styled.input`
-	width: 100%;
-	padding: 10px;
+	width: 500px;
+	height: 45px;
 	margin-bottom: 10px;
 	border: 1px solid ${(props) => (props.error ? "red" : "#ccc")};
 	border-radius: 4px;
@@ -125,7 +134,8 @@ const ErrorMessage = styled.p`
 `;
 
 const Select = styled.select`
-	width: 100%;
+	width: 500px;
+
 	padding: 10px;
 	margin-bottom: 10px;
 	border: 1px solid ${(props) => (props.error ? "red" : "#ccc")};
@@ -134,9 +144,9 @@ const Select = styled.select`
 `;
 
 const Button = styled.button`
-	width: 400px;
+	width: 500px;
 	height: 40px;
-	background-color: #007bff;
+	background-color: #00ff33;
 	color: #fff;
 	border: none;
 	border-radius: 4px;
@@ -146,3 +156,6 @@ const Button = styled.button`
 		background-color: #0056b3;
 	}
 `;
+const StyledLabel = styled.label`
+	font-weight: 800;
+`

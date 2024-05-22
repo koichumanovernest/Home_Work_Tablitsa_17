@@ -6,17 +6,11 @@ const UserPage = ({ users, onDelete, onEdit }) => {
 	return (
 		<div>
 			<FlexBox>
-				<Text>Список студентов</Text>
+				<Text>JS - 13 - Managment</Text>
 				<StyledLink
 					to="/add"
-					style={{
-						color: "black",
-						textDecoration: "none",
-						fontSize: "20px",
-						fontFamily: "Arial, Helvetica, sans-serif",
-						marginTop: "10px",
-					}}>
-					Добавить 
+			>
+					Add Student
 				</StyledLink>
 			</FlexBox>
 			<UserTable users={users} onDelete={onDelete} onEdit={onEdit} />
@@ -32,19 +26,21 @@ const Text = styled.h1`
 
 const FlexBox = styled.div`
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
+	margin-top: 10px;
 `;
 
 const StyledLink = styled(Link)`
-	background: #2bff00;
+	background: #0c0c0c;
 	margin-bottom: 10px;
-	position: relative;
-	left: -10px;
-	height: 30px;
-	width: 120px;
+	height: 40px;
+	width: 220px;
 	border-radius: 10px ;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	color: #9c1818;
+	color: #ebebeb;
+	font-size: 20px;
+	
+
 `

@@ -33,14 +33,14 @@ const UserTable = ({ users, onDelete, onEdit }) => {
 		<div>
 			<Table>
 				<thead>
-					<tr>
+					<StyledTr>
 						<th>Имя</th>
 						<th>Фамилия</th>
 						<th>Пол</th>
 						<th>Город рождения</th>
 						<th>Год рождения</th>
 						<th>Действия</th>
-					</tr>
+					</StyledTr>
 				</thead>
 				<tbody>
 					{users.map((user, index) => (
@@ -86,6 +86,8 @@ const Table = styled.table`
 	border-collapse: collapse;
 	margin-left: 8rem;
 	margin-top: 3rem;
+	color: #ddd;
+	background: #292992;
 	
 	font-family: Arial, Helvetica, sans-serif;
 
@@ -96,24 +98,20 @@ const Table = styled.table`
 		text-align: left;
 	}
 
-	th {
-		background-color: #f2f2f2;
-	}
 
-	tr:nth-child(even) {
-		background-color: #f2f2f2;
-	}
 
 	tr:hover {
-		background-color: #ddd;
+		background-color: #0e0355;
 	}
 
-	td:last-child {
-		text-align: center;
-	}
+
 
 	
 `;
+const StyledTr = styled.tr`
+	background: #292992;
+  color: #ddaa14;
+`
 
 const StyledEdit = styled.span`
 		border: 2px solid black;
